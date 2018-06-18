@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Woof.WindowsEx1 {
+namespace Woof.WindowsEx {
 
     /// <summary>
     /// Creates a system-wide keyboard shortcuts.
@@ -151,10 +151,12 @@ namespace Woof.WindowsEx1 {
     /// </summary>
     [Flags]
     public enum ModifierKeys : uint {
+        #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         Alt = 1,
         Control = 2,
         Shift = 4,
         Win = 8
+        #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 
 }
