@@ -19,6 +19,7 @@ namespace Woof.WindowsEx {
         /// <param name="level">Ancestor level - 1 is parent, 2 is grandparent and so on.</param>
         /// <returns>Matched element or null.</returns>
         public static T Ancestor<T>(this FrameworkElement e, int level = 1) where T : FrameworkElement {
+
             var target = e.Parent as FrameworkElement;
             while (target != null && (!(target is T) || --level > 0)) target = target.Parent as FrameworkElement;
             return target as T;
