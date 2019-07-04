@@ -1,34 +1,39 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFrameworks>net45;net46;net47;netcoreapp3.0</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <ApplicationIcon />
     <StartupObject />
     <AssemblyName>Woof.Windows</AssemblyName>
     <RootNamespace>Woof</RootNamespace>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <Version>1.0.3</Version>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <Version>2.0.1</Version>
     <Authors>Adam Łyskawa</Authors>
     <Company>Codedog Ltd.</Company>
     <Description>Various WPF, MVVM and WinForms helpers.</Description>
     <Copyright>(c)2019 by CodeDog Ltd.</Copyright>
     <PackageTags>code codedog dotnet netcore windows system</PackageTags>
     <PackageProjectUrl>https://github.com/HTD/Woof.Windows</PackageProjectUrl>
-    <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageReleaseNotes>ADD: System.Windows.Interactivity.
-ADD: EventToCommand.</PackageReleaseNotes>
+    <PackageReleaseNotes>Changed dependency from System.Windows.Interactivity to Microsoft.Xaml.Behaviors (as more modern and Open Sourced).</PackageReleaseNotes>
     <Product>Woof.Windows</Product>
     <PackageId>Woof.Windows</PackageId>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://en.wikipedia.org/wiki/MIT_License</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <FileVersion>2.0.1.0</FileVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+  <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.0'">
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+        <Reference Include="System.Configuration" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
+  </ItemGroup>
+  
 
   
 
