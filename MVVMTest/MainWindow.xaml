@@ -1,0 +1,60 @@
+﻿<Window
+    x:Class="MVVMTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MVVMTest"
+    xmlns:m="clr-namespace:MVVMTest.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:MVVMTest.ViewModels"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:MainVM />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{Binding Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type m:Coordinate}">
+                    <Grid Width="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel
+                            Grid.Column="0"
+                            Margin="0,0,10,0"
+                            Orientation="Horizontal">
+                            <TextBlock FontWeight="Black" Text="X = " />
+                            <TextBlock Foreground="MediumBlue" Text="{Binding X}" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <TextBlock FontWeight="Black" Text="Y = " />
+                            <TextBlock Foreground="MediumBlue" Text="{Binding Y}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Button
+                Command="{Binding}"
+                CommandParameter="Add"
+                Content="Add" />
+            <Button
+                Command="{Binding}"
+                CommandParameter="Clear"
+                Content="Clear" />
+            <Button
+                Command="{Binding}"
+                CommandParameter="Update"
+                Content="Update" />
+        </StackPanel>
+    </Grid>
+</Window>

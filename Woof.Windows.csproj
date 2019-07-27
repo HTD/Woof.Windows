@@ -4,7 +4,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <TargetFrameworks>net45;net46;net47;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net45;net46;net47;net48;netcoreapp3.0</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <ApplicationIcon />
     <StartupObject />
@@ -25,10 +25,17 @@
     <PackageLicenseUrl>https://en.wikipedia.org/wiki/MIT_License</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <FileVersion>2.0.1.0</FileVersion>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.0'">
         <Reference Include="System.ComponentModel.DataAnnotations" />
         <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="MVVMTest\**" />
+    <EmbeddedResource Remove="MVVMTest\**" />
+    <None Remove="MVVMTest\**" />
+    <Page Remove="MVVMTest\**" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
