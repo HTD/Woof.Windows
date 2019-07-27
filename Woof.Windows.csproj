@@ -11,8 +11,8 @@
     <StartupObject />
     <AssemblyName>Woof.Windows</AssemblyName>
     <RootNamespace>Woof</RootNamespace>
-    <AssemblyVersion>2.0.2.0</AssemblyVersion>
-    <Version>2.0.2</Version>
+    <AssemblyVersion>2.0.3.0</AssemblyVersion>
+    <Version>2.0.3</Version>
     <Authors>Adam Łyskawa</Authors>
     <Company>Codedog Ltd</Company>
     <Description>MVVM Helpers:
@@ -24,14 +24,13 @@
     <Copyright>(c)2019 by CodeDog Ltd.</Copyright>
     <PackageTags>code codedog dotnet netcore windows system mvvm</PackageTags>
     <PackageProjectUrl>https://github.com/HTD/Woof.Windows</PackageProjectUrl>
-    <PackageReleaseNotes>FIX: ObservableCollectionEx
-ADD: FullyObservableCollection</PackageReleaseNotes>
+    <PackageReleaseNotes>ADD: FullyObservableCollection: AddAndObserve(), OnItemPropertyChanged().</PackageReleaseNotes>
     <Product>Woof.Windows</Product>
     <PackageId>Woof.Windows</PackageId>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://en.wikipedia.org/wiki/MIT_License</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-    <FileVersion>2.0.2.0</FileVersion>
+    <FileVersion>2.0.3.0</FileVersion>
     <LangVersion>default</LangVersion>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.0'">
