@@ -25,7 +25,7 @@ namespace Woof.WindowsEx {
                 if (v is FrameworkElement) (v as FrameworkElement).ApplyTemplate();
                 for (int i = 0, n = VisualTreeHelper.GetChildrenCount(v); i < n; i++) stack.Push(VisualTreeHelper.GetChild(v, i) as Visual);
             }
-            return default(T);
+            return default;
         }
 
     }
