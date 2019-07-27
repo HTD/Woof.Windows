@@ -26,13 +26,6 @@ namespace MVVMTest.ViewModels {
                         for (int i = 0, n = Items.Count; i < n; i++) {
                             Items[i].X = Math.Sin(Items[i].X);
                             Items[i].Y = Math.Cos(Items[i].Y);
-
-                            //var changed = Items[i];
-                            //Items[i] = null;
-                            //changed.X = 0;
-                            //Items[i] = changed;
-                            ////Items[i].Y = 0;
-
                         }
                         break;
                 }

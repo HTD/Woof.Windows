@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace Woof.WindowsEx {
         /// Adds a collection of items and triggers notification after all items are added.
         /// </summary>
         /// <param name="items"></param>
-        public void Add(IEnumerable<T> items) {
+        public virtual void Add(IEnumerable<T> items) {
             IsNotificationDisabled = true;
             foreach (var item in items) Items.Add(item);
             IsNotificationDisabled = false;
@@ -45,27 +46,7 @@ namespace Woof.WindowsEx {
         /// <summary>
         /// Set true to disable notifications.
         /// </summary>
-        private bool IsNotificationDisabled;
-
-    }
-
-    /// <summary>
-    /// Represents a dynamic data collection that provides notifications when items get
-    /// added, removed, when the whole list is refreshed or when a property of an item is changed.
-    /// </summary>
-    /// <typeparam name="T">The type of elements in the collection, must implement INotifyPropertyChanged.</typeparam>
-    public class FullyObservableCollection<T> : ObservableCollectionEx<T> where T: INotifyPropertyChanged {
-
-        /// <summary>
-        /// Creates an empty observable collection.
-        /// </summary>
-        public FullyObservableCollection() { }
-
-        /// <summary>
-        /// Creates an observable collection from any base collection.
-        /// </summary>
-        /// <param name="baseCollection">Any collection.</param>
-        public FullyObservableCollection(IEnumerable<T> baseCollection) : base(baseCollection) { }
+        protected bool IsNotificationDisabled;
 
     }
 

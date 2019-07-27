@@ -5,6 +5,7 @@
     <OutputType>Library</OutputType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <TargetFrameworks>net45;net46;net47;net48;netcoreapp3.0</TargetFrameworks>
+      <NoWarn>1701;NU1701</NoWarn>
     <UseWPF>true</UseWPF>
     <ApplicationIcon />
     <StartupObject />
