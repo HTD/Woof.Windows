@@ -44,9 +44,11 @@ namespace Woof.WindowsEx {
         protected override void Invoke(object parameter) => Command.Execute(new Data(AssociatedObject, parameter, Tag));
 
 
+
         /// <summary>
         /// Complete event data for <see cref="EventToCommand"/> trigger action.
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1034:Nested types should not be visible", Justification = "<Pending>")]
         public sealed class Data {
 
             /// <summary>

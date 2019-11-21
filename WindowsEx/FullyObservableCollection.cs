@@ -58,7 +58,7 @@ namespace Woof.WindowsEx {
         /// <param name="sender">Item.</param>
         /// <param name="e">Event arguments.</param>
         protected void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e) {
-            if (!(sender is T item)) throw new ArgumentException($"Invalid argument type: {sender.GetType().Name}, {typeof(T).Name} expected", "sender");
+            if (!(sender is T item)) throw new ArgumentException($"Invalid argument type: {sender.GetType().Name}, {typeof(T).Name} expected", nameof(sender));
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
         }

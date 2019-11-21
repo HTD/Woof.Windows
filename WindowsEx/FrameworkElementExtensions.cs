@@ -34,14 +34,13 @@ namespace Woof.WindowsEx {
         /// <returns>Awaitable task.</returns>
         public static async Task FadeOutAsync(this FrameworkElement e, double delay, double duration) {
             await Task.Delay((int)(1000d * delay));
-            using (var s1 = new SemaphoreSlim(0, 1)) {
-                Application.Current.Dispatcher.Invoke(() => {
-                    var a = new DoubleAnimation(1, 0, new Duration(TimeSpan.FromSeconds(duration)), FillBehavior.Stop);
-                    a.Completed += (s, e1) => { e.Visibility = Visibility.Hidden; s1.Release(); };
-                    e.BeginAnimation(UIElement.OpacityProperty, a);
-                });
-                await s1.WaitAsync();
-            }
+            using var s1 = new SemaphoreSlim(0, 1);
+            Application.Current.Dispatcher.Invoke(() => {
+                var a = new DoubleAnimation(1, 0, new Duration(TimeSpan.FromSeconds(duration)), FillBehavior.Stop);
+                a.Completed += (s, e1) => { e.Visibility = Visibility.Hidden; s1.Release(); };
+                e.BeginAnimation(UIElement.OpacityProperty, a);
+            });
+            await s1.WaitAsync();
         }
 
     }

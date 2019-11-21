@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFramework>net45</TargetFramework>
     <TargetFrameworks>net45;net46;net47;net48;netcoreapp3.0</TargetFrameworks>
       <NoWarn>1701;NU1701</NoWarn>
     <UseWPF>true</UseWPF>
@@ -11,8 +11,8 @@
     <StartupObject />
     <AssemblyName>Woof.Windows</AssemblyName>
     <RootNamespace>Woof</RootNamespace>
-    <AssemblyVersion>2.0.3.0</AssemblyVersion>
-    <Version>2.0.3</Version>
+    <AssemblyVersion>2.7.1.0</AssemblyVersion>
+    <Version>2.7.1</Version>
     <Authors>Adam Łyskawa</Authors>
     <Company>Codedog Ltd</Company>
     <Description>MVVM Helpers:
@@ -20,18 +20,21 @@
 - ObservableCollectionEx
 - FullyObservableCollection,
 - EventToCommand,
-- DependencyObject, FrameworkElement and Visual extensions</Description>
+- DependencyObject, FrameworkElement and Visual extensions
+
+ApplicationExtensions allowing registering disposable objects to dispose when application exits.</Description>
     <Copyright>(c)2019 by CodeDog Ltd.</Copyright>
     <PackageTags>code codedog dotnet netcore windows system mvvm</PackageTags>
     <PackageProjectUrl>https://github.com/HTD/Woof.Windows</PackageProjectUrl>
-    <PackageReleaseNotes>ADD: FullyObservableCollection: AddAndObserve(), OnItemPropertyChanged().</PackageReleaseNotes>
+    <PackageReleaseNotes>ADD: ApplicationExtensions allowing registering disposable objects to dispose when application exits.</PackageReleaseNotes>
     <Product>Woof.Windows</Product>
     <PackageId>Woof.Windows</PackageId>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <PackageLicenseUrl>https://en.wikipedia.org/wiki/MIT_License</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-    <FileVersion>2.0.3.0</FileVersion>
+    <FileVersion>2.7.1.0</FileVersion>
     <LangVersion>default</LangVersion>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.0'">
         <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -44,10 +47,6 @@
     <Page Remove="MVVMTest\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.0.30" />
   </ItemGroup>
-  
-
-  
-
 </Project>

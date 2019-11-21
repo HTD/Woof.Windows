@@ -16,7 +16,7 @@ namespace MVVMTest.ViewModels {
             get => Value.X;
             set {
                 Value.X = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("X"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(X)));
             }
         }
 
@@ -24,7 +24,7 @@ namespace MVVMTest.ViewModels {
             get => Value.Y;
             set {
                 Value.Y = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Y"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Y)));
             }
         }
 
@@ -32,7 +32,7 @@ namespace MVVMTest.ViewModels {
             get => Value.Tag;
             set {
                 Value.Tag = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tag"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Tag)));
             }
         }
 

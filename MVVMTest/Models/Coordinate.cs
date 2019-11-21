@@ -10,7 +10,7 @@ namespace MVVMTest.Models {
 
         public object Tag { get; set; }
 
-        public static Coordinate Random { get => new Coordinate { X = 1 - 2 * PRNG.NextDouble(), Y = 1 - 2 * PRNG.NextDouble() }; }
+        public static Coordinate Random => new Coordinate { X = 1 - 2 * PRNG.NextDouble(), Y = 1 - 2 * PRNG.NextDouble() };
 
         private static readonly Random PRNG = new Random();
 
